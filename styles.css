@@ -46,13 +46,9 @@
     border-radius: 20%;
   }
 
-  .game-over {
-    background-image: url("images/gameOver.jpg");
-    opacity: 0.8;
-  }
-
   .red {
     background-color: red;
+
   }
 
   .blue {
@@ -77,8 +73,3 @@
     color: #FF0000;
     font-family: "Ubuntu";
 }
-
-
-
-
-
