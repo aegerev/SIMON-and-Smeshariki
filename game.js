@@ -10,9 +10,8 @@ $(document).keydown(function(event) {
   if(!started) {
     started = true;
 
-    let audio = new Audio("sounds/smeshariSimon.mp3");
-    audio.play();
-
+    let smeshariSimon1 = new Audio ("sounds/smeshariSimon-1.mp3");
+    smeshariSimon1.play();
 
     $("#level-title").text("Level " + level);
 
