@@ -2,8 +2,13 @@ let buttonColors = ["red", "blue", "barash", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 
-$(".btn").click(function() {
-  alert("I got clicked!");
+$(".btn").click(function(event) {
+  let userChosenColor = event.target.id;
+  userClickedPattern.push(userChosenColor);
+  
+  //FOR TESTING PURPOSES -- DELETE AFTER PROJECT IS DONE
+  alert(userClickedPattern);
+
 })
 
 function nextSequence() {
@@ -13,8 +18,7 @@ function nextSequence() {
 
   $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
 
-  //FOR TESTING PURPOSES -- DELETE AFTER PROJECT IS DONE
-  console.log(gamePattern);
+
 }
 
 nextSequence();
