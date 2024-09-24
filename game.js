@@ -4,10 +4,15 @@ let userClickedPattern = [];
 
 let level = 0;
 let started = false;
+let activeGame = true;
 
 $(document).keydown(function(event) {
   if(!started) {
     started = true;
+
+    let audio = new Audio("sounds/smeshariSimon.mp3");
+    audio.play();
+
 
     $("#level-title").text("Level " + level);
 
@@ -23,9 +28,6 @@ $(".btn").click(function(event) {
   animatePress(userChosenColor);
 
   nextSequence();
-  
-  // //FOR TESTING PURPOSES -- DELETE AFTER PROJECT IS DONE
-  // alert(userClickedPattern);
 
 })
 
@@ -33,15 +35,13 @@ $(".btn").click(function(event) {
 function nextSequence() {
   level++;
   $("#level-title").text("Level " + level);
-  
+
   let randomNumber = Math.floor(Math.random() * 4);
   let randomChosenColor = buttonColors[randomNumber];
 
   gamePattern.push(randomChosenColor);
 
   $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
-
-  
 }
 
 function animatePress(currentColor){
@@ -50,5 +50,3 @@ function animatePress(currentColor){
     $("#" + currentColor).removeClass('pressed');
   }, 100);
 }
-
-nextSequence();
